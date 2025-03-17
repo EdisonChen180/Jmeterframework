@@ -19,7 +19,7 @@ public class JMeterExecutor {
         // 初始化JMeter引擎
         String jmeterHome = System.getProperty("user.dir");
         JMeterUtils.setJMeterHome(jmeterHome);
-        JMeterUtils.loadJMeterProperties(jmeterHome + "/target/classes/jmeter.properties");
+        JMeterUtils.loadJMeterProperties(jmeterHome + "/src/main/resources/jmeter.properties");
         JMeterUtils.initLocale();
         jmeterEngine = new StandardJMeterEngine();
         
@@ -64,5 +64,27 @@ public class JMeterExecutor {
             // 生成测试报告
             reportGenerator.generateReport();
         }
+    }
+
+    public static void main(String[] args) {
+        JMeterExecutor executor = new JMeterExecutor();
+        
+        // 创建测试配置
+        TestConfig config = TestConfig.builder()
+            .testName("示例性能测试")
+            .url("http://example.com/api/test")
+            .method("GET")
+            .requestBody("{}")
+            .threadCount(10)
+            .loopCount(1)
+            .expectedResponseTime(5000)
+            .duration(60)
+            .debugMode(true)
+            .chainIndex("test-chain")
+            .headers(new java.util.HashMap<>())
+            .build();
+        
+        // 执行测试
+        executor.runTest(config);
     }
 }

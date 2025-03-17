@@ -27,8 +27,12 @@ public class TestReportGenerator {
         
         // 配置报告
         ExtentSparkReporter sparkReporter = new ExtentSparkReporter(reportPath);
+        sparkReporter.config().setEncoding("UTF-8");
         sparkReporter.config().setDocumentTitle("性能测试报告");
         sparkReporter.config().setReportName("JMeter性能测试结果");
+        sparkReporter.config().setTimeStampFormat("yyyy年MM月dd日 HH:mm:ss");
+        sparkReporter.config().setJs("document.charset = 'UTF-8';");
+        sparkReporter.config().setCss(".content { font-family: 'Microsoft YaHei', sans-serif; }");
         
         extentReports.attachReporter(sparkReporter);
     }

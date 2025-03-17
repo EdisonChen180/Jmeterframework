@@ -53,4 +53,14 @@ public class TestConfig {
      * 是否启用调试模式
      */
     private boolean debugMode;
+
+    /**
+     * 链索引
+     */
+    private String chainIndex;
+
+    /**
+     * 请求头信息
+     */
+    private java.util.Map<String, String> headers;
 }

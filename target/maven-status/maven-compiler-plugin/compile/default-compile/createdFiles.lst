@@ -1,6 +1,6 @@
-com/example/framework/jmeter/config/TestConfig$TestConfigBuilder.class
-com/example/framework/jmeter/report/TestReportGenerator.class
-com/example/framework/jmeter/JMeterExecutor.class
-com/example/framework/jmeter/config/TestConfig.class
-com/example/framework/jmeter/generator/UrlUtils.class
-com/example/framework/jmeter/generator/JMeterTestGenerator.class
+com\example\framework\jmeter\JMeterExecutor.class
+com\example\framework\jmeter\report\TestReportGenerator.class
+com\example\framework\jmeter\config\TestConfig$TestConfigBuilder.class
+com\example\framework\jmeter\generator\UrlUtils.class
+com\example\framework\jmeter\generator\JMeterTestGenerator.class
+com\example\framework\jmeter\config\TestConfig.class
